@@ -1,8 +1,8 @@
-module "git_branch" {
-    source = "../"
+module "run" {
+    source = "github.com/ruanmartinelli/terraform-command-output"
     command = "git name-rev --name-only HEAD"
 }
 
 output "branch_name" {
-    value = module.git_branch.output
+    value = module.run.output
 }

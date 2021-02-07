@@ -6,7 +6,9 @@ const branchName = execSync("git name-rev --name-only HEAD | tr -d '\n'", {
 })
 
 execSync('terraform init')
-execSync('terraform apply --auto-approve')
+const x = execSync('terraform apply --auto-approve', { encoding: 'utf-8' })
+
+console.log(x);
 
 const output = execSync('terraform output -json', { encoding: 'utf-8' })
 
